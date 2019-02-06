@@ -4,15 +4,13 @@ describe ('Plane', function(){
 
   beforeEach(function(){
     plane = new Plane();
+    airport = jasmine.createSpyObj('airport', ['allowLanding']);
   });
 
   describe('tells a plane when to', function(){
     it('land', function(){
-      expect(plane.land(airport).toBe(true))
-
-
+      plane.land(airport);
+      expect(airport.allowLanding).toHaveBeenCalledWith(plane);
     });
-
   });
-
 });
