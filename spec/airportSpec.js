@@ -20,4 +20,12 @@ describe ('Airport', function(){
     });
   });
 
+  describe('checks if plane is removed from array', function(){
+    it('when allowTakeoff is called', function(){
+      airport.allowLanding(plane);
+      airport.allowTakeoff(plane);
+      expect(airport.isPlanes()).toEqual([]);
+    });
+  });
+
 });
