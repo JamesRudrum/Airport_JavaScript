@@ -4,6 +4,7 @@ describe ('Airport', function(){
   var plane;
 
   beforeEach(function(){
+    plane = jasmine.createSpy('plane');
     airport = new Airport();
   });
 
